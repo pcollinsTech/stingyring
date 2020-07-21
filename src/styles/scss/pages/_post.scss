@@ -1,0 +1,11 @@
+.blog_content {
+  position: relative;
+  padding-top: 6em;
+
+  @include breakpoint(large) {
+    padding-top: 0;
+  }
+  @include breakpoint(medium) {
+    padding-top: 0;
+  }
+}

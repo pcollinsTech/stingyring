@@ -1,0 +1,22 @@
+#clients {
+  text-align: center;
+  background-color: #f5f8fc;
+  h2 {
+    color: black;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .client {
+    padding: 5px 10px;
+    img {
+      width: 80%;
+    }
+  }
+  @include breakpoint(small) {
+    .client {
+      width: 50%;
+    }
+  }
+}
