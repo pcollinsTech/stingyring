@@ -2,26 +2,14 @@
 
 import React from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components"
 
-import ItemThumbnail from "../components/ItemThumbnail/ItemThumbnail"
 import Layout from "../layout"
 import SEO from "../components/seo"
-
-const ThumbnailsWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px;
-`
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const items = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>

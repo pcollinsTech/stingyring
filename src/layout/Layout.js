@@ -3,8 +3,6 @@ import styled, { ThemeProvider } from "styled-components"
 import { Container } from "reactstrap"
 import { theme } from "../styles/theme"
 import { GlobalStyle } from "../styles/globalStyle"
-import HeaderMain from "./Headers/HeaderMain"
-import HeaderMinor from "./Headers/HeaderMinor"
 import Footer from "./Footer"
 import "bootstrap/dist/css/bootstrap.css"
 import Banner from "../components/Banner"
@@ -29,7 +27,6 @@ class Layout extends React.Component {
   render() {
     const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    const siteName = "Stingy Ring"
     let banner
 
     if (location.pathname === rootPath) {

@@ -1,23 +1,9 @@
 import React from "react"
-import styled from "styled-components"
-import { Container, Row } from "reactstrap"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { Link } from "gatsby"
 import logo from "../../content/assets/logo.png"
 import moment from "moment"
-const FooterStyled = styled.footer`
-  width: 100%;
-  padding: 20px;
-  background-color: #edcc21;
-  @media (max-width: 600px) {
-    text-align: center;
-  }
-`
-const SocialMediaIcons = styled.div`
-  width: 100%;
-  padding: 20px;
-  color: #e41d21;
-`
+
 const Footer = () => {
   return (
     <footer id="footer">
