@@ -30,10 +30,7 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     let banner
 
-    if (
-      location.pathname === rootPath ||
-      location.pathname === rootPath + "about"
-    ) {
+    if (location.pathname === rootPath) {
       banner = <Banner img={surfer} />
     }
 

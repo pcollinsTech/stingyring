@@ -118,7 +118,7 @@ class Item extends React.Component {
               data-item-name={item.frontmatter.title}
               data-item-description={item.frontmatter.description}
               data-item-image={item.frontmatter.image.childImageSharp.fluid.src}
-              data-item-url={"https://snip.stingyring.com" + item.fields.slug} //REPLACE WITH OWN URL
+              data-item-url={"https://www.stingyring.com" + item.fields.slug} //REPLACE WITH OWN URL
               data-item-custom1-name={
                 item.frontmatter.customField
                   ? item.frontmatter.customField.name
