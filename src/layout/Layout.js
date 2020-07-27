@@ -1,6 +1,5 @@
 import React from "react"
 import styled, { ThemeProvider } from "styled-components"
-import { Container } from "reactstrap"
 import { theme } from "../styles/theme"
 import { GlobalStyle } from "../styles/globalStyle"
 import Footer from "./Footer"
@@ -8,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.css"
 import Banner from "../components/Banner"
 import Header from "./Header"
 import "../styles/scss/main.scss"
+import surfer from "../../content/assets/images/18-05-06-Easkey-Left_Sligo_15.jpg"
+
 const PageWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -33,7 +34,7 @@ class Layout extends React.Component {
       location.pathname === rootPath ||
       location.pathname === rootPath + "about"
     ) {
-      banner = <Banner />
+      banner = <Banner img={surfer} />
     }
 
     return (
@@ -44,7 +45,7 @@ class Layout extends React.Component {
             <Header />
             <MainSection>
               {banner}
-              <Container>{children}</Container>
+              {children}
             </MainSection>
             <Footer />
           </PageWrapper>

@@ -1,81 +1,39 @@
-// This is the homepage.
-
 import React from "react"
-import { graphql, Link } from "gatsby"
-import styled from "styled-components"
-// import HexagonCard from "../components/HexagonCard"
-import ItemThumbnail from "../components/ItemThumbnail/ItemThumbnail"
-import Layout from "../layout"
-import SEO from "../components/seo"
-import AboutUs from "../components/AboutUs"
+import header from "../../content/assets/images/18-05-06-Easkey-Left_Sligo_15.jpg"
+import logo from "../../content/assets/images/logo-white.png"
+import { FaFacebook, FaInstagram } from "react-icons/fa"
 
-const ThumbnailsWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px;
-`
-
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const items = data.allMarkdownRemark.edges
-
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All items" />
-        <ThumbnailsWrapper>
-          <AboutUs />
-          {items.map(({ node }) => {
-            const { title, image, price } = node.frontmatter
-            return (
-              <ItemThumbnail
-                key={node.fields.slug}
-                link={node.fields.slug}
-                heading={title}
-                image={image.childImageSharp.fluid}
-                price={price}
-              />
-            )
-          })}
-        </ThumbnailsWrapper>
-      </Layout>
-    )
-  }
+export default function index() {
+  return (
+    <div>
+      <img src={header} alt="Snow" className="banner" />
+      <div className="container  pt-5">
+        <div className="row d-flex flex-column pt-3">
+          <div className="mx-auto pt-3">
+            <img src={logo} alt="Stingy Ring logo" className="text-center" />
+          </div>
+          <h1>Website Coming Soon...</h1>
+          <div className="row d-flex justify-content-center">
+            <div className="col-m-6">
+              <div className="social-link m-4">
+                <a href="https://www.facebook.com/stingyring/" target="__blank">
+                  <FaFacebook />
+                </a>
+              </div>
+            </div>
+            <div className="social-link m-4">
+              <div className="col-m-6">
+                <a
+                  href="https://www.instagram.com/stingyring/"
+                  target="__blank"
+                >
+                  <FaInstagram />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
-
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            price
-            image {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`

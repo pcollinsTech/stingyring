@@ -53,7 +53,6 @@
 
 @import "components/section";
 @import "components/form";
-@import "components/box";
 @import "components/on_the_blog";
 @import "components/meet_the_team";
 @import "components/clients";
@@ -61,7 +60,7 @@
 @import "components/image";
 @import "components/list";
 @import "components/table";
-@import "components/featured_blog";
+@import "components/full_screen_banner";
 @import "components/button";
 @import "components/tiles";
 @import "components/contact-method";
@@ -132,27 +131,76 @@ a:hover {
   margin-right: -50px;
   z-index: 20;
 }
-
-.imageHolder {
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
-  img {
-    width: 70%;
-  }
+.white {
+  background-color: white;
 }
-.imageHolder .caption {
-  padding: 0 20px;
-  position: absolute;
-  width: 50%;
-  top: 50px;
-  right: -20px;
-  color: #000000;
-  background: white;
-  text-align: center;
-  font-weight: bold;
-}
-
 body {
   background-color: #e7f0f9;
 }
+
+.btn-primary {
+  background-color: #fbba42;
+  border-color: #fbba42;
+  border-radius: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 100vh;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  max-width: 100%;
+  min-height: 100vh;
+  filter: brightness(50%);
+}
+
+.centered img {
+  width: 340px;
+}
+.flex-container {
+  margin: 40px 60px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-link {
+  position: relative;
+  background-color: #fdae39;
+  border-radius: 50%;
+  height: 51px;
+  width: 50px;
+}
+.social-link a {
+  position: absolute;
+  top: -2px;
+  left: 21%;
+  color: #ac101c;
+  font-size: 30px;
+}
+
+// .social-link .instagram {
+//   top: 8%;
+//   left: 26%;
+// }

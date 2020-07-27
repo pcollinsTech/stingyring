@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import styled from "styled-components"
+
 import {
   Collapse,
   Navbar,
@@ -11,6 +13,15 @@ import { Link } from "gatsby"
 import logo from "../../content/assets/images/logo.png"
 import { FaShoppingCart } from "react-icons/fa"
 
+const CartSummary = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  font-weight: bold;
+  color: #e41d21;
+`
 class Header extends Component {
   state = {
     items: 0,
@@ -62,10 +73,18 @@ class Header extends Component {
               <NavItem className="p-3">
                 <Link to="/contact">Contact</Link>
               </NavItem>
-              <NavItem className="p-3">
-                <Link to="/">
-                  <FaShoppingCart />
-                </Link>
+              <NavItem>
+                <CartSummary className="snipcart-summary">
+                  <a
+                    href="#"
+                    className="snipcart-checkout"
+                    style={{ color: "#e41d21" }}
+                  >
+                    {" "}
+                    <FaShoppingCart />
+                  </a>
+                  <p className="items_inicato">{this.state.items}</p>
+                </CartSummary>
               </NavItem>
             </Nav>
           </Collapse>

@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 import Layout from "../layout"
+import { Container } from "reactstrap"
 
 const Heading = styled.h1`
   font-weight: 900;
@@ -89,50 +90,49 @@ class Item extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Heading>{item.frontmatter.title}</Heading>
-
-        <ImgStyled fluid={item.frontmatter.image.childImageSharp.fluid} />
-
-        <Price>
-          {this.updatePrice(
-            item.frontmatter.price,
-            item.frontmatter.customField.values
-          )}{" "}
-          Kr
-        </Price>
-        <Description>{item.frontmatter.description}</Description>
-        <Dropdown
-          id={item.frontmatter.customField.name}
-          onChange={(e) => this.setSelected(e.target.value)}
-          value={this.state.selected}
-        >
-          {item.frontmatter.customField.values.map((option) => (
-            <DropdownOption key={option.name}>{option.name}</DropdownOption>
-          ))}
-        </Dropdown>
-
-        <BuyButton
-          className="snipcart-add-item"
-          data-item-id={item.frontmatter.id}
-          data-item-price={item.frontmatter.price}
-          data-item-name={item.frontmatter.title}
-          data-item-description={item.frontmatter.description}
-          data-item-image={item.frontmatter.image.childImageSharp.fluid.src}
-          data-item-url={
-            "https://gatsby-snipcart-starter.netlify.com" + item.fields.slug
-          } //REPLACE WITH OWN URL
-          data-item-custom1-name={
-            item.frontmatter.customField
-              ? item.frontmatter.customField.name
-              : null
-          }
-          data-item-custom1-options={this.createString(
-            item.frontmatter.customField.values
-          )}
-          data-item-custom1-value={this.state.selected}
-        >
-          Add to basket
-        </BuyButton>
+        <Container>
+          <div className="my-5">
+            <Heading>{item.frontmatter.title}</Heading>
+            <ImgStyled fluid={item.frontmatter.image.childImageSharp.fluid} />
+            <Price>
+              {this.updatePrice(
+                item.frontmatter.price,
+                item.frontmatter.customField.values
+              )}{" "}
+              Kr
+            </Price>
+            <Description>{item.frontmatter.description}</Description>
+            <Dropdown
+              id={item.frontmatter.customField.name}
+              onChange={(e) => this.setSelected(e.target.value)}
+              value={this.state.selected}
+            >
+              {item.frontmatter.customField.values.map((option) => (
+                <DropdownOption key={option.name}>{option.name}</DropdownOption>
+              ))}
+            </Dropdown>
+            <BuyButton
+              className="snipcart-add-item"
+              data-item-id={item.frontmatter.id}
+              data-item-price={item.frontmatter.price}
+              data-item-name={item.frontmatter.title}
+              data-item-description={item.frontmatter.description}
+              data-item-image={item.frontmatter.image.childImageSharp.fluid.src}
+              data-item-url={"https://snip.stingyring.com" + item.fields.slug} //REPLACE WITH OWN URL
+              data-item-custom1-name={
+                item.frontmatter.customField
+                  ? item.frontmatter.customField.name
+                  : null
+              }
+              data-item-custom1-options={this.createString(
+                item.frontmatter.customField.values
+              )}
+              data-item-custom1-value={this.state.selected}
+            >
+              Add to basket
+            </BuyButton>
+          </div>
+        </Container>
       </Layout>
     )
   }

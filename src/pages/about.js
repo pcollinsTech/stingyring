@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../layout"
 import SEO from "../components/seo"
+import { Container } from "reactstrap"
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,23 +15,29 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All items" />
-        <h2>We're on a mission to create change.</h2>
-        <p>
-          We believe in implementing change. Last year an estimated 8 million
-          metric tons of plastic waste entered the oceans. We didn’t want to
-          contribute to that in any way, so we made a wax that’s 100% plastic
-          free. The main ingredient comes courtesy of the original wax producers
-          (bees!), and it’s made by hand, giving surfers an effective,
-          eco-friendly alternative to the petrochemical based products on the
-          market.
-        </p>
-        <p>
-          Sadly, over the past 15 years, colonies of bees have been
-          disappearing, the reason unknown. Referred to as ‘colony collapse
-          disorder’, billions of Honey bees across the world are leaving their
-          hives, never to return. In some regions, up to 90% of bees have
-          disappeared!
-        </p>
+        <Container>
+          <h2 className="text-center mb-5">
+            We're on a mission to create change.
+          </h2>
+          <div className="row mb-5">
+            <p>
+              We believe in implementing change. Last year an estimated 8
+              million metric tons of plastic waste entered the oceans. We didn’t
+              want to contribute to that in any way, so we made a wax that’s
+              100% plastic free. The main ingredient comes courtesy of the
+              original wax producers (bees!), and it’s made by hand, giving
+              surfers an effective, eco-friendly alternative to the
+              petrochemical based products on the market.
+            </p>
+            <p>
+              Sadly, over the past 15 years, colonies of bees have been
+              disappearing, the reason unknown. Referred to as ‘colony collapse
+              disorder’, billions of Honey bees across the world are leaving
+              their hives, never to return. In some regions, up to 90% of bees
+              have disappeared!
+            </p>
+          </div>
+        </Container>
       </Layout>
     )
   }
