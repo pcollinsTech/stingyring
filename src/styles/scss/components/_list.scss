@@ -47,9 +47,12 @@ ul {
     li {
       display: inline-block;
       padding: 0 1em 0 0;
-
       &:last-child {
         padding-right: 0;
+      }
+      svg {
+        height: 30px;
+        width: 30px;
       }
     }
 
@@ -143,10 +146,10 @@ ul {
 
       > .page {
         @include vendor(
-          'transition',
+          "transition",
           (
-            'background-color #{_duration(transition)} ease-in-out',
-            'color #{_duration(transition)} ease-in-out'
+            "background-color #{_duration(transition)} ease-in-out",
+            "color #{_duration(transition)} ease-in-out"
           )
         );
         border-bottom: 0;

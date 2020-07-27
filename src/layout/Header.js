@@ -8,8 +8,8 @@ import {
   NavItem,
 } from "reactstrap"
 import { Link } from "gatsby"
-import logo from "../../content/assets/logo.png"
-import { AiOutlineShoppingCart } from "react-icons/ai"
+import logo from "../../content/assets/images/logo.png"
+import { FaShoppingCart } from "react-icons/fa"
 
 class Header extends Component {
   state = {
@@ -57,14 +57,14 @@ class Header extends Component {
                 <Link to="/">Home</Link>
               </NavItem>
               <NavItem className="p-3">
-                <Link to="/about/">About</Link>
+                <Link to="/about">About</Link>
               </NavItem>
               <NavItem className="p-3">
                 <Link to="/contact">Contact</Link>
               </NavItem>
               <NavItem className="p-3">
                 <Link to="/">
-                  <AiOutlineShoppingCart />
+                  <FaShoppingCart />
                 </Link>
               </NavItem>
             </Nav>

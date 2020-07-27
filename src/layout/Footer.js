@@ -1,7 +1,7 @@
 import React from "react"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { Link } from "gatsby"
-import logo from "../../content/assets/logo.png"
+import logo from "../../content/assets/images/logo.png"
 import moment from "moment"
 
 const Footer = () => {

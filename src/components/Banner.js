@@ -1,5 +1,5 @@
 import React from "react"
-import surfer from "../../content/assets/18-05-06-Easkey-Left_Sligo_15.jpg"
+import surfer from "../../content/assets/images/18-05-06-Easkey-Left_Sligo_15.jpg"
 
 const headingOne = "You've now entered Stringy Ring surf wax company"
 

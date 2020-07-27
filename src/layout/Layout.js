@@ -29,7 +29,10 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     let banner
 
-    if (location.pathname === rootPath) {
+    if (
+      location.pathname === rootPath ||
+      location.pathname === rootPath + "about"
+    ) {
       banner = <Banner />
     }
 

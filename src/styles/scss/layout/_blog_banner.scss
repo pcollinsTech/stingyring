@@ -5,40 +5,43 @@
 ///
 
 /* Banner */
-.featured_blog_image {
-  width: 60%;
-  margin: 0 auto;
-  padding: 1em 0;
-  @include breakpoint(medium) {
-    width: 80%;
-  }
-  @include breakpoint(small) {
-    width: 90%;
-  }
-}
-#blog_banner {
-  @include vendor('align-items', 'center');
-  @include vendor('display', 'flex');
+
+#contact_banner {
+  margin-bottom: 50px;
+  @include vendor("align-items", "center");
+  @include vendor("display", "flex");
   @include padding(4em, 0, (2em, 0, 0, 0));
-  position: relative;
-  text-align: center;
-  color: black;
+
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
-  height: 20vh;
-  margin-bottom: -3.25em;
+  height: 60vh;
   max-height: 32em;
   min-height: 22em;
-  top: -3.25em;
+  position: relative;
+  h2,
+  h3,
+  p {
+    color: _palette(white) !important;
+  }
+  .contact_section_info {
+    position: absolute;
+    width: 92%;
+    top: 98px;
+    left: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
   &:after {
-    @include vendor('transition', 'opacity #{_duration(banner)} ease');
-    @include vendor('transition-delay', '0.75s');
-    @include vendor('pointer-events', 'none');
+    @include vendor("transition", "opacity #{_duration(banner)} ease");
+    @include vendor("transition-delay", "0.75s");
+    @include vendor("pointer-events", "none");
+    background-color: _palette(bg);
     display: block;
     left: 0;
     opacity: 0.85;
@@ -48,31 +51,25 @@
     z-index: 1;
   }
 
-  h1 {
-    color: white;
-    font-size: 4.6em;
+  h2 {
+    font-size: 3.3em;
     margin-bottom: 0;
   }
-  img {
-    align: top;
-    -webkit-filter: brightness(40%); /* Safari 6.0 - 9.0 */
-    filter: brightness(40%);
+  h3 {
+    font-size: 1.5em;
+    margin-bottom: 0;
   }
+
   > .inner {
     @include vendor(
-      'transition',
+      "transition",
       (
-        'opacity 1.5s ease',
-        'transform 0.5s ease-out',
-        'filter 0.5s ease',
-        '-webkit-filter 0.5s ease'
+        "opacity 1.5s ease",
+        "transform 0.5s ease-out",
+        "filter 0.5s ease",
+        "-webkit-filter 0.5s ease"
       )
     );
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     padding: 0 !important;
     margin: 0 auto;
     z-index: 2;
@@ -83,7 +80,7 @@
 
     header {
       width: auto;
-
+      color: _palette(bg-alt);
       > :first-child {
         width: auto;
 
@@ -94,13 +91,13 @@
     }
 
     .content {
-      @include vendor('display', 'flex');
-      @include vendor('align-items', 'center');
-      position: relative;
+      @include vendor("display", "flex");
+      @include vendor("align-items", "center");
       margin: 0 auto;
       text-align: center;
       color: _palette(fg);
       p {
+        color: _palette(bg);
         font-size: 1.2em;
         font-weight: _font(weight-bold);
         letter-spacing: _font(letter-spacing);
@@ -109,14 +106,45 @@
     }
   }
 
-  &.blog_major {
+  &.major {
     text-align: center;
-    overflow: hidden;
-    min-height: 10em;
-    max-height: 30em;
-    background: _palette(bg);
+    height: 75vh;
+    min-height: 30em;
+    max-height: 50em;
+
     &.alt {
       opacity: 0.75;
+    }
+  }
+
+  &.style1 {
+    &:after {
+      background-color: _palette(accent1);
+    }
+  }
+  &.style2 {
+    &:after {
+      background-color: _palette(accent2);
+    }
+  }
+  &.style3 {
+    &:after {
+      background-color: _palette(accent3);
+    }
+  }
+  &.style4 {
+    &:after {
+      background-color: _palette(accent4);
+    }
+  }
+  &.style5 {
+    &:after {
+      background-color: _palette(accent5);
+    }
+  }
+  &.style6 {
+    &:after {
+      background-color: _palette(accent6);
     }
   }
 
@@ -126,48 +154,41 @@
     }
 
     > .inner {
-      @include vendor('filter', 'blur(0.125em)');
+      @include vendor("filter", "blur(0.125em)");
       //   @include vendor('transform', 'translateX(-0.5em)');
       opacity: 0;
     }
   }
 
   @include breakpoint(large) {
-    top: -4.25em;
     background-attachment: scroll;
-    h1 {
-      font-size: 3.6em;
-    }
   }
   @include breakpoint(medium) {
-    top: -6.25em;
-    h1 {
-      font-size: 1.6em;
-    }
-  }
-  @include breakpoint(medium) {
-    top: -2.25em;
-    padding-bottom: 20px;
-    h1 {
-      font-size: 1.6em;
+    height: 100vh;
+    &.major {
+      height: 100vh;
+      min-height: 100vh;
     }
   }
 
   @include breakpoint(small) {
     @include padding(3em, 0, (2em, 0, 0, 0));
-    height: auto;
-    margin-bottom: -3.75em;
+    height: 100vh;
+    margin-bottom: -2.75em;
     max-height: none;
-    min-height: 15em;
-    top: -5.75em;
-
-    h1 {
-      margin: 50px 0 0;
-
-      padding: 50px 0;
-      font-size: 1.5em;
+    min-height: 0;
+    top: -2.75em;
+    .contact_section_info {
+      top: 28px;
+      button {
+      }
     }
-
+    .contact_section_right {
+      margin-right: 20px;
+      h3 {
+        font-size: 1.4rem;
+      }
+    }
     > .inner {
       .content {
         display: block;
@@ -179,20 +200,25 @@
       }
     }
 
-    &.blog_major {
-      height: auto;
-      min-height: 15em;
-      max-height: none;
+    &.major {
+      height: 100vh;
+      min-height: 100vh;
     }
   }
 
   @include breakpoint(xsmall) {
     @include padding(4em, 0, (2em, 0, 0, 0));
-    top: -8.75em;
-    > .inner {
-      h1 {
-        font-size: 1em;
+    .contact_section_left {
+      h3 {
+        font-size: 1.35rem;
       }
+    }
+    .contact_section_left {
+      h3 {
+        font-size: 1.35rem;
+      }
+    }
+    > .inner {
       .content {
         p {
           br {
@@ -202,7 +228,7 @@
       }
     }
 
-    &.blog_major {
+    &.major {
       @include padding(6em, 0, (2em, 0, 0, 0));
     }
   }

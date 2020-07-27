@@ -54,15 +54,12 @@
 @import "components/section";
 @import "components/form";
 @import "components/box";
-@import "components/blog_item";
-@import "components/pdf_popup";
 @import "components/on_the_blog";
 @import "components/meet_the_team";
 @import "components/clients";
 @import "components/icon";
 @import "components/image";
 @import "components/list";
-@import "components/services";
 @import "components/table";
 @import "components/featured_blog";
 @import "components/button";
@@ -89,8 +86,10 @@
 @import "pages/contact";
 @import "pages/post";
 @import "pages/blog";
-.transparent .navbar .navbar-expand-md .navbar-light {
+nav {
   z-index: 100;
+}
+.transparent .navbar .navbar-expand-md .navbar-light {
   border-width: 0px;
   -webkit-box-shadow: 0px 0px;
   box-shadow: 0px 0px;
@@ -117,4 +116,43 @@
 .nav-item a {
   color: _palette(bg);
   font-size: 1.5em;
+}
+
+a:hover {
+  color: _palette(bg) !important;
+}
+
+.nav-item a:hover {
+  color: _palette(bg-alt) !important;
+  font-size: 1.5em;
+}
+
+.white_box {
+  background-color: white;
+  margin-right: -50px;
+  z-index: 20;
+}
+
+.imageHolder {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  img {
+    width: 70%;
+  }
+}
+.imageHolder .caption {
+  padding: 0 20px;
+  position: absolute;
+  width: 50%;
+  top: 50px;
+  right: -20px;
+  color: #000000;
+  background: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+body {
+  background-color: #e7f0f9;
 }

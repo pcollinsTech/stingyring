@@ -1,14 +1,14 @@
 import React from "react"
-import surfer from "../../content/assets/18-05-06-Easkey-Left_Sligo_15.jpg"
+import surfer from "../../content/assets/images/18-05-06-Easkey-Left_Sligo_15.jpg"
 const BannerContact = ({ small, headingOne, headingTwo }) => (
-  <section id="banner" className="major">
-    <div className="inner mt-5">
-      <div className="row mt-5">
-        <div className="container contact_section">
+  <section id="contact_banner" className="major">
+    <div className="inner">
+      <div className="contact_section">
+        <div className="row">
           <img src={surfer} alt="surfer" />
           <div className="contact_section_info">
             <div className="col-sm-6 text-left contact_section_left">
-              <h1>Denmark</h1>
+              <h2>Denmark</h2>
               <p>
                 Hanstholmvej <br />
                 Thisted <br />

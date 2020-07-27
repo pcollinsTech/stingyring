@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logo from "../../../content/assets/logo.png"
+import logo from "../../../content/assets/images/logo.png"
 
 const HeaderMainStyled = styled.div`
   width: 100%;
@@ -33,7 +33,7 @@ const Menu = styled.div`
   font-size: 25px;
 `
 
-const headerMain = props => {
+const headerMain = (props) => {
   return (
     <HeaderMainStyled className="justify-content-between">
       <LinkStyled to="/">

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logo from "../../../content/assets/logo.png"
+import logo from "../../../content/assets/images/logo.png"
 // import { ShoppingCart } from "styled-icons/material/ShoppingCart"
 
 const HeaderMinorStyled = styled.div`
@@ -10,7 +10,7 @@ const HeaderMinorStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
-  background: ${props => props.theme.colors.main};
+  background: ${(props) => props.theme.colors.main};
 `
 const LinkStyled = styled(Link)`
   box-shadow: none;
@@ -37,7 +37,7 @@ class HeaderMinor extends Component {
     items: 0,
   }
 
-  updateItemTotal = qty => {
+  updateItemTotal = (qty) => {
     this.setState({ items: qty })
   }
 
@@ -54,7 +54,7 @@ class HeaderMinor extends Component {
       })
 
       //this allows it to work on refreshing the page
-      window.Snipcart.subscribe("cart.ready", data => {
+      window.Snipcart.subscribe("cart.ready", (data) => {
         var count = window.Snipcart.api.items.count()
         this.updateItemTotal(count)
       })

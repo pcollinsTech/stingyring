@@ -28,14 +28,6 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All items" />
         <ThumbnailsWrapper>
-          <h1>You've now entered Stringy Ring surf wax company</h1>
-          <p>
-            Want to work with us or stock the product in your store, please get
-            in touch
-          </p>
-          <Link to="/contact">
-            <button className="btn btn-primary">Contact</button>
-          </Link>
           <AboutUs />
           {items.map(({ node }) => {
             const { title, image, price } = node.frontmatter
