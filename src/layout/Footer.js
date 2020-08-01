@@ -7,9 +7,9 @@ import moment from "moment"
 const Footer = () => {
   return (
     <footer id="footer">
-      <div className="row inner">
+      <div className="row inner pb-4">
         <div className="container footer_container">
-          <div className="col-md-3 footer_item text-left">
+          <div className="col-md-3 footer_item ">
             <h5>Stingy Ring</h5>
             <p className="mt-2">
               Hanstholmvej <br />
@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-md-6 footer_item">
-            <h5>Subscribe to our newsletter</h5>
+            {/* <h5>Subscribe to our newsletter</h5>
             <form className="form-inline mt-2">
               <div className="form-group">
                 <input
@@ -52,9 +52,12 @@ const Footer = () => {
                 <Link to="/privacy">Privacy Policy</Link>
               </li>
               <li>&copy; Stingy Ring {moment().format("YYYY")}</li>
-            </ul>
+            </ul> */}
           </div>
           <div className="col-md-3 footer_item ">
+            <Link to="/" className="logo">
+              <img src={logo} alt="logo white" />
+            </Link>
             <h5>Follow us</h5>
             <ul className="container icons mt-2">
               <li>
@@ -72,10 +75,17 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <Link to="/" className="logo">
-              <img src={logo} alt="logo white" />
-            </Link>
           </div>
+        </div>
+      </div>
+      <div className="container py-4">
+        <div className="row ">
+          {/* <div className="made_by mx-auto">
+            Hand Crafted by{" "}
+            <a href="https://beachbeedigital.com" target="__blank">
+              Beach Bee Digital
+            </a>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -10,7 +10,7 @@ const ItemThumbnailStyled = styled.div`
   align-items: center;
   justify-content: center;
   margin: 20px;
-  background: ${props => props.theme.colors.primaryAccent};
+  background: ${(props) => props.theme.colors.main};
 
   @media (max-width: 930px) {
     width: 250px;
@@ -55,7 +55,7 @@ const Price = styled.p`
   padding-bottom: 10px;
 `
 
-const itemThumbnail = props => {
+const itemThumbnail = (props) => {
   return (
     <ItemThumbnailStyled>
       <LinkStyled to={props.link}>

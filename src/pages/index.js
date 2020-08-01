@@ -1,39 +1,111 @@
-import React from "react"
-import header from "../../content/assets/images/18-05-06-Easkey-Left_Sligo_15.jpg"
-import logo from "../../content/assets/images/logo-white.png"
-import { FaFacebook, FaInstagram } from "react-icons/fa"
+// This is the homepage.
 
-export default function index() {
-  return (
-    <div>
-      <img src={header} alt="Snow" className="banner" />
-      <div className="container  pt-5">
-        <div className="row d-flex flex-column pt-3">
-          <div className="mx-auto pt-3">
-            <img src={logo} alt="Stingy Ring logo" className="text-center" />
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
+// import HexagonCard from "../components/HexagonCard"
+import Layout from "../layout"
+import SEO from "../components/seo"
+import AboutUs from "../components/AboutUs"
+import ItemThumbnail from "../components/ItemThumbnail/ItemThumbnail"
+import FullscreenBanner from "../components/FullscreenBanner"
+import klit from "../../content/assets/images/klit.jpg"
+import logo from "../../content/assets/images/logo.png"
+const ThumbnailsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+`
+
+class BlogIndex extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const items = data.allMarkdownRemark.edges
+
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO title="All items" />
+        <div className="container">
+          <div className="row">
+            <img
+              src={logo}
+              alt="logo"
+              className="mx-auto"
+              style={{ maxWidth: "200px" }}
+            />
           </div>
-          <h1>Website Coming Soon...</h1>
-          <div className="row d-flex justify-content-center">
-            <div className="col-m-6">
-              <div className="social-link m-4">
-                <a href="https://www.facebook.com/stingyring/" target="__blank">
-                  <FaFacebook />
-                </a>
-              </div>
-            </div>
-            <div className="social-link m-4">
-              <div className="col-m-6">
-                <a
-                  href="https://www.instagram.com/stingyring/"
-                  target="__blank"
-                >
-                  <FaInstagram />
-                </a>
-              </div>
+          <div className="row py-5">
+            <div className="mx-auto text-center">
+              <h2 className="p-4">
+                Stingy Ring is commited to making a postive change to our
+                environment
+              </h2>
+              <p className="px-4">Wax for your surfboard =)</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  )
+        <AboutUs />
+
+        <FullscreenBanner img={klit} title="100% All Natural Surf Wax" />
+        <div className="container">
+          <div className="row py-5">
+            <div className="mx-auto text-center">
+              <h2 className="p-4">The Stingy Ring Shop</h2>
+            </div>
+          </div>
+        </div>
+        <ThumbnailsWrapper>
+          {items.map(({ node }) => {
+            const { title, image, price } = node.frontmatter
+            return (
+              <ItemThumbnail
+                key={node.fields.slug}
+                link={node.fields.slug}
+                heading={title}
+                image={image.childImageSharp.fluid}
+                price={price}
+              />
+            )
+          })}
+        </ThumbnailsWrapper>
+      </Layout>
+    )
+  }
 }
+
+export default BlogIndex
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            price
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

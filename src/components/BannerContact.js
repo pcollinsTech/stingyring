@@ -34,7 +34,6 @@ const BannerContact = ({ small, headingOne, headingTwo }) => (
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <div className="form-group mb-2 text-left">
-                  <label htmlFor="name">Name</label>
                   <input
                     type="text"
                     className="form-control"
@@ -43,7 +42,6 @@ const BannerContact = ({ small, headingOne, headingTwo }) => (
                   />
                 </div>
                 <div className="form-group mb-2">
-                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     className="form-control"
@@ -57,7 +55,7 @@ const BannerContact = ({ small, headingOne, headingTwo }) => (
                     placeholder="Message"
                     name="message"
                   />
-                  <button type="submit" className="mt-3 px-3">
+                  <button type="submit" className="mt-3 ">
                     Send
                   </button>
                 </div>

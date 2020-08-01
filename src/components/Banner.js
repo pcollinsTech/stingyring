@@ -5,7 +5,10 @@ export default function Banner({ img, title }) {
     <section
       id="banner"
       className="major"
-      style={{ backgroundImage: `url(${img})` }}
+      style={{
+        backgroundImage: `url(${img})`,
+        backgroundPosition: "ceneter bottom",
+      }}
     >
       <div className="inner">
         <header>{title}</header>

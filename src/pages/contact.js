@@ -11,7 +11,7 @@ class Contact extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO />
+        <SEO title="Contact" />
         <div className="mobile">
           <BannerContact headingOne="Contact." />
         </div>

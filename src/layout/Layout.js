@@ -8,6 +8,7 @@ import Banner from "../components/Banner"
 import Header from "./Header"
 import "../styles/scss/main.scss"
 import surfer from "../../content/assets/images/18-05-06-Easkey-Left_Sligo_15.jpg"
+import klit from "../../content/assets/images/klit.jpg"
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -30,8 +31,10 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     let banner
 
-    if (location.pathname === rootPath) {
+    if (location.pathname === rootPath || location.pathname === "/surf-wax/") {
       banner = <Banner img={surfer} />
+    } else if (location.pathname === "/about") {
+      banner = <Banner img={klit} />
     }
 
     return (

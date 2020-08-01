@@ -4,7 +4,7 @@ import { Container } from "reactstrap"
 export default function AboutUs() {
   return (
     <Container>
-      <div className="row my-5">
+      <div className="row my-5 py-5">
         <div class="col-sm-8">
           <img src={hanstholm} alt="" />
         </div>

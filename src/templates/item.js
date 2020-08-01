@@ -21,27 +21,26 @@ const ImgStyled = styled(Img)`
 
 const Price = styled.p`
   margin: 20px 0;
-  padding: 10px;
+  padding: 10px 0;
   font-weight: 700;
-  background: ${(props) => props.theme.colors.primaryAccent};
 `
 const Description = styled.p`
   margin: 20px 0;
-  padding: 10px;
+  padding: 10px 0;
 `
 
 const Dropdown = styled.select`
   display: block;
   padding: 10px;
   margin: 10px 0;
-  background: ${(props) => props.theme.colors.secondaryAccent};
+  background: white;
   font-weight: 700;
   border: none;
   outline: none;
 `
 const DropdownOption = styled.option`
   padding: 10px;
-  background: ${(props) => props.theme.colors.secondaryAccent};
+  background: white;
   font-weight: 700;
   border: none;
   outline: none;
@@ -49,7 +48,7 @@ const DropdownOption = styled.option`
 
 const BuyButton = styled.button`
   padding: 20px;
-  background: ${(props) => props.theme.colors.secondaryAccent};
+  background: ${(props) => props.theme.colors.main};
   font-weight: 700;
 `
 
@@ -102,6 +101,7 @@ class Item extends React.Component {
               Kr
             </Price>
             <Description>{item.frontmatter.description}</Description>
+            Quantities
             <Dropdown
               id={item.frontmatter.customField.name}
               onChange={(e) => this.setSelected(e.target.value)}

@@ -10,7 +10,7 @@ import {
   NavItem,
 } from "reactstrap"
 import { Link } from "gatsby"
-import logo from "../../content/assets/images/logo.png"
+import logo from "../../content/assets/images/logo-white.png"
 import { FaShoppingCart } from "react-icons/fa"
 
 const CartSummary = styled.div`
