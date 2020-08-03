@@ -47,10 +47,11 @@ class About extends React.Component {
             </p>
             <p>
               We also have a sister company WaxhiveWraps where we produce a
-              Beeswax Food Wrap fro the reduction in Single-use Plastics Check
-              them out at{" "}
+              Beeswax Food Wrap to help start the reduction in Single-use
+              Plastics Check them out at{" "}
               <a href="https://www.waxhivewraps.com">www.waxhivewraps.com</a>
             </p>
+            <h2>Peace and surf your brains out 🙂</h2>
           </div>
         </Container>
         <div className="container">
