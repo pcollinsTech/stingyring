@@ -33,7 +33,10 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath || location.pathname === "/surf-wax/") {
       banner = <Banner img={surfer} />
-    } else if (location.pathname === "/about") {
+    } else if (
+      location.pathname === "/about" ||
+      location.pathname === "/about/"
+    ) {
       banner = <Banner img={klit} />
     }
 
