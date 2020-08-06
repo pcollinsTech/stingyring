@@ -10,8 +10,10 @@ customField:
   values:
     [
       { name: "One Ring", priceChange: 0 },
-      { name: "Half Dozen", priceChange: 200.00 },
-      { name: "Pack of 12", priceChange: 405.00 },
+      { name: "Three (3)", priceChange: 125.00 },
+      { name: "Half Dozen (6)", priceChange: 250.00 },
+      { name: "Pack of 12", priceChange: 500.00 },
+      { name: "Full Rack (24)", priceChange: 1000.00 },
     ]
 ---
 
