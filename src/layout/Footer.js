@@ -80,12 +80,12 @@ const Footer = () => {
       </div>
       <div className="container py-4">
         <div className="row ">
-          {/* <div className="made_by mx-auto">
+          <div className="made_by mx-auto">
             Hand Crafted by{" "}
             <a href="https://beachbeedigital.com" target="__blank">
               Beach Bee Digital
             </a>
-          </div> */}
+          </div>
         </div>
       </div>
     </footer>
